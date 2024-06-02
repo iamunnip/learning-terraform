@@ -13,3 +13,13 @@ module "internet_gateway" {
   tags       = var.tags
   depends_on = [module.vpc]
 }
+
+module "subnet" {
+  source              = "../../../modules/subnet"
+  vpc_id              = module.vpc.vpc_id
+  public_cidr_blocks  = var.public_cidr_blocks
+  private_cidr_blocks = var.private_cidr_blocks
+  availability_zones  = var.availability_zones
+  tags                = var.tags
+  depends_on          = [module.vpc]
+}

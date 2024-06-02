@@ -17,3 +17,15 @@ variable "enable_dns_support" {
 variable "tags" {
   type = map(string)
 }
+
+variable "public_cidr_blocks" {
+  type = list(string)
+}
+
+variable "private_cidr_blocks" {
+  type = list(string)
+}
+
+variable "availability_zones" {
+  type = list(string)
+}
